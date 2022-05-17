@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AssetManagementSystem.Models.BookAsset>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h1>Available Books</h1>
+
+<p>
+   
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfPublish)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+@foreach (var item in AssetManagementSystem.Controllers.BookController.bookList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfPublish)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "UpdateBooK", new { SerialNo = item.SerialNo }) |
+                @Html.ActionLink("Delete", "DeleteBook", new { SerialNo = item.SerialNo })
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

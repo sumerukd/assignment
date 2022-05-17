@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AssetManagementSysteM.Models.SoftwareLicenseAsset>
+
+@{
+    ViewBag.Title = "softwares";
+    var softwares = ViewBag.softwares;
+}
+
+<h1>Available softwareLicense</h1>
+
+<p>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoftwareLicenseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublisherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfPublish)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <tr>
+            <td>
+                @softwares.SerialNo
+            </td>
+            <td>
+                @softwares.SoftwareLicenseName
+            </td>
+            <td>
+                @softwares.PublisherName
+            </td>
+            <td>
+                @softwares.DateOfPublish
+            </td>
+        </tr>
+
+    </tbody>
+</table>

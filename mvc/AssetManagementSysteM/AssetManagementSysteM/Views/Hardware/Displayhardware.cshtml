@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AssetManagementSysteM.Models.HardwareAsset>
+
+@{
+    ViewBag.Title = "hardwares";
+    var hardwares = ViewBag.hardwares;
+}
+
+<h1>Available Hardwares</h1>
+
+<p>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HardwareName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManufacturerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfManufacture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <tr>
+            <td>
+                @hardwares.SerialNo
+            </td>
+            <td>
+                @hardwares.HardwareName
+            </td>
+            <td>
+                @hardwares.anufacturerName
+            </td>
+            <td>
+                @hardwares.DateOfManufacture
+            </td>
+        </tr>
+
+    </tbody>
+</table>

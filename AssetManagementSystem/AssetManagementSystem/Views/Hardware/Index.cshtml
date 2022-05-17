@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AssetManagementSystem.Models.HardwareAsset>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Available Hardware</h1>
+
+<p>
+   
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HardwareName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManufacturerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfManufacture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in HardwareAsset.hardwareList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HardwareName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfManufacture)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "UpdateHardware", new { SerialNo = item.SerialNo }) |
+                @Html.ActionLink("Delete", "DeleteHardware", new { SerialNo = item.SerialNo })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
